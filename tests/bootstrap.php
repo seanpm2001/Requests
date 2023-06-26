@@ -72,7 +72,7 @@ if (defined('__PHPUNIT_PHAR__')) {
 				return false;
 			}
 
-			// Strip namespace prefix 'WpOrg\\Requests\Tests\'.
+			// Strip namespace prefix 'WpOrg\Requests\Tests\'.
 			$relative_class = substr($class_name, 21);
 			$file           = realpath(__DIR__ . '/' . strtr($relative_class, '\\', '/') . '.php');
 

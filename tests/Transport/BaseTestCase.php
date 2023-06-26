@@ -1198,7 +1198,7 @@ abstract class BaseTestCase extends TestCase {
 	/**
 	 * Get a Hooks instance that asserts correct enforcement for max_bytes.
 	 *
-	 * @return Hooks
+	 * @return \WpOrg\Requests\Hooks
 	 */
 	protected function getMaxBytesAssertionHooks() {
 		$hooks = new Hooks();
