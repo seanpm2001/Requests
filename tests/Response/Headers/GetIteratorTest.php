@@ -42,7 +42,7 @@ final class GetIteratorTest extends TestCase {
 					$this->assertSame('10', $value, 'Content-Length header does not match');
 					break;
 				default:
-					throw new Exception('Invalid offset key: ' . $name);
+					throw new Exception('Invalid offset key: ' . $name, 'type');
 			}
 		}
 	}
