@@ -34,9 +34,18 @@ final class FlattenTest extends TestCase {
 	 */
 	public static function dataFlatten() {
 		return [
-			'string'            => ['text', 'text'],
-			'empty array'       => [[], ''],
-			'array with values' => [['text', 10, 'more text'], 'text,10,more text'],
+			'string' => [
+				'input'    => 'text',
+				'expected' => 'text',
+			],
+			'empty array' => [
+				'input'    => [],
+				'expected' => '',
+			],
+			'array with values' => [
+				'input'    => ['text', 10, 'more text'],
+				'expected' => 'text,10,more text',
+			],
 		];
 	}
 
