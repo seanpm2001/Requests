@@ -85,15 +85,15 @@ final class IsExpiredTest extends TestCase {
 			],
 			'Both max-age and expires keys set, max-age takes precedence, cookie not expired' => [
 				'attributes' => [
-					'max-age'       => gmmktime(0, 0, 0, 2, 1, 2022),
-					'expires'       => gmmktime(0, 0, 0, 12, 1, 2021),
+					'max-age' => gmmktime(0, 0, 0, 2, 1, 2022),
+					'expires' => gmmktime(0, 0, 0, 12, 1, 2021),
 				],
 				'expected'   => false,
 			],
 			'Both max-age and expires keys set, max-age takes precedence, cookie expired' => [
 				'attributes' => [
-					'max-age'       => gmmktime(0, 0, 0, 12, 1, 2021),
-					'expires'       => gmmktime(0, 0, 0, 2, 1, 2022),
+					'max-age' => gmmktime(0, 0, 0, 12, 1, 2021),
+					'expires' => gmmktime(0, 0, 0, 2, 1, 2022),
 				],
 				'expected'   => true,
 			],
