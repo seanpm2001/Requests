@@ -98,9 +98,9 @@ abstract class TestCase extends Polyfill_TestCase {
 	/**
 	 * Helper function to convert a single-level array containing text strings to a named data provider.
 	 *
-	 * @param string[] $input Input array.
+	 * @param array<string> $input Input array.
 	 *
-	 * @return array[] Array which is usable as a test data provider with named data sets.
+	 * @return array<array> Array which is usable as a test data provider with named data sets.
 	 */
 	public static function textArrayToDataprovider($input) {
 		$data = [];
