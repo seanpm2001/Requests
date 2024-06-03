@@ -88,19 +88,19 @@ final class StatusCodeTest extends TestCase {
 
 		return [
 			'null (or not passed)' => [
-				'expectedCode' => 0,
+				'expected_code' => 0,
 			],
 			'integer error code as data' => [
-				'expectedCode' => 0,
-				'data'         => 507,
+				'expected_code' => 0,
+				'data'          => 507,
 			],
 			'Response object with status code' => [
-				'expectedCode' => 12345,
-				'data'         => $response_with_status,
+				'expected_code' => 12345,
+				'data'          => $response_with_status,
 			],
 			'Response object without status code' => [
-				'expectedCode' => 0,
-				'data'         => $response_without_status,
+				'expected_code' => 0,
+				'data'          => $response_without_status,
 			],
 		];
 	}
