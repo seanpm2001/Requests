@@ -33,9 +33,18 @@ final class ParseTest extends TestCase {
 	}
 
 	/**
+	 * Data Provider.
+	 *
+	 * @return array
+	 */
+	public static function dataInvalidStringInput() {
+		return TypeProviderHelper::getAllExcept(TypeProviderHelper::GROUP_STRING);
+	}
+
+	/**
 	 * Tests receiving an exception when the parse() method received an invalid input type as `$name`.
 	 *
-	 * @dataProvider dataInvalidStringInput
+	 * @dataProvider dataParseInvalidName
 	 *
 	 * @covers ::parse
 	 *
@@ -45,7 +54,7 @@ final class ParseTest extends TestCase {
 	 */
 	public function testParseInvalidName($input) {
 		$this->expectException(InvalidArgument::class);
-		$this->expectExceptionMessage('Argument #2 ($name) must be of type string');
+		$this->expectExceptionMessage('Argument #2 ($name) must be of type integer|string and conform to RFC 2616');
 
 		Cookie::parse('test', $input);
 	}
@@ -55,8 +64,10 @@ final class ParseTest extends TestCase {
 	 *
 	 * @return array
 	 */
-	public static function dataInvalidStringInput() {
-		return TypeProviderHelper::getAllExcept(TypeProviderHelper::GROUP_STRING);
+	public static function dataParseInvalidName() {
+		$data = TypeProviderHelper::getAllExcept(TypeProviderHelper::GROUP_INT, TypeProviderHelper::GROUP_STRING);
+		$data['Valid string, but not a valid RFC 2616 token'] = ["some\ntext\rwith\tcontrol\echaracters\fin\vit"];
+		return $data;
 	}
 
 	/**
