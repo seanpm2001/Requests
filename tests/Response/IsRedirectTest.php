@@ -93,7 +93,7 @@ final class IsRedirectTest extends TestCase {
 		$except[] = 'boolean false'; // No need to double test `false`.
 		$invalid  = TypeProviderHelper::getAllExcept($except);
 		foreach ($invalid as $key => $type) {
-			$data['Invalid status code: ' . $key] = [$type['input']];
+			$data['Invalid status code: ' . $key] = [$type[0]];
 		}
 
 		return $data;

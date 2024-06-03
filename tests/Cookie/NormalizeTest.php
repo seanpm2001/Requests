@@ -282,7 +282,7 @@ final class NormalizeTest extends TestCase {
 		foreach ($types as $key => $value) {
 			$data['Attribute normalization: expires: unsupported type - ' . $key] = [
 				'attributes' => [
-					'expires' => $value['input'],
+					'expires' => $value[0],
 				],
 				'expected'   => [],
 			];
@@ -303,7 +303,7 @@ final class NormalizeTest extends TestCase {
 		foreach ($types as $key => $value) {
 			$data['Attribute normalization: max-age: unsupported type - ' . $key] = [
 				'attributes' => [
-					'max-age' => $value['input'],
+					'max-age' => $value[0],
 				],
 				'expected'   => [],
 			];
@@ -324,7 +324,7 @@ final class NormalizeTest extends TestCase {
 		foreach ($types as $key => $value) {
 			$data['Attribute normalization: domain: unsupported type - ' . $key] = [
 				'attributes' => [
-					'domain' => $value['input'],
+					'domain' => $value[0],
 				],
 				'expected'   => [],
 			];

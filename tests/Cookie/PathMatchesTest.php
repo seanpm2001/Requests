@@ -79,13 +79,13 @@ final class PathMatchesTest extends TestCase {
 			if (in_array($key, TypeProviderHelper::GROUP_EMPTY, true)) {
 				$data['Match:     "/" vs ' . $key] = [
 					'original' => '/',
-					'check'    => $value['input'],
+					'check'    => $value[0],
 					'matches'  => true,
 				];
 
 				$data['Non-match: "/test" vs ' . $key] = [
 					'original' => '/test',
-					'check'    => $value['input'],
+					'check'    => $value[0],
 					'matches'  => false,
 				];
 
@@ -98,7 +98,7 @@ final class PathMatchesTest extends TestCase {
 			 */
 			$data['Non-match: "/" vs ' . $key] = [
 				'original' => '/',
-				'check'    => $value['input'],
+				'check'    => $value[0],
 				'matches'  => false,
 			];
 		}
