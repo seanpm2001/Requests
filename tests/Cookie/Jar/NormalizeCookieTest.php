@@ -16,7 +16,7 @@ final class NormalizeCookieTest extends TestCase {
 	/**
 	 * Verify that cookie normalization works on both prebaked and unbaked cookies when not passing a key.
 	 *
-	 * @dataProvider dataNormalization
+	 * @dataProvider dataNormalizationWithoutKey
 	 *
 	 * @param mixed $cookie Cookie header value, possibly pre-parsed (object).
 	 *
@@ -31,9 +31,24 @@ final class NormalizeCookieTest extends TestCase {
 	}
 
 	/**
+	 * Data provider.
+	 *
+	 * @return array
+	 */
+	public static function dataNormalizationWithoutKey() {
+		$data = self::dataNormalizationWithKey();
+
+		foreach ($data as $set_name => $set_value) {
+			unset($data[$set_name]['expected_name']);
+		}
+
+		return $data;
+	}
+
+	/**
 	 * Verify that cookie normalization works on both prebaked and unbaked cookies when passing a key.
 	 *
-	 * @dataProvider dataNormalization
+	 * @dataProvider dataNormalizationWithKey
 	 *
 	 * @param mixed $cookie Cookie header value, possibly pre-parsed (object).
 	 *
@@ -55,7 +70,7 @@ final class NormalizeCookieTest extends TestCase {
 	 *
 	 * @return array
 	 */
-	public static function dataNormalization() {
+	public static function dataNormalizationWithKey() {
 		return [
 			'unbaked cookie (string)' => [
 				'cookie'        => self::COOKIE_VALUE,
