@@ -202,7 +202,7 @@ final class TypeProviderHelper {
 	 *                            Typically, one or more of the predefined "groups" (see the constants)
 	 *                            would be used here.
 	 *
-	 * @return array<string, mixed>
+	 * @return array<string, array<mixed>>
 	 */
 	public static function getAllExcept(array ...$except) {
 		$except = array_flip(array_merge(...$except));
@@ -217,7 +217,7 @@ final class TypeProviderHelper {
 	 *                               Typically, one or more of the predefined "groups" (see the constants)
 	 *                               would be used here.
 	 *
-	 * @return array<string, mixed>
+	 * @return array<string, array<mixed>>
 	 */
 	public static function getSelection(array ...$selection) {
 		$selection = array_flip(array_merge(...$selection));
@@ -228,7 +228,7 @@ final class TypeProviderHelper {
 	/**
 	 * Retrieve an array in data provider format with all typical PHP data types.
 	 *
-	 * @return array<string, mixed>
+	 * @return array<string, array<mixed>>
 	 */
 	public static function getAll() {
 		if (isset(self::$memory_handle_open) === false) {
@@ -241,75 +241,29 @@ final class TypeProviderHelper {
 		}
 
 		return [
-			'null' => [
-				'input' => null,
-			],
-			'boolean false' => [
-				'input' => false,
-			],
-			'boolean true' => [
-				'input' => true,
-			],
-			'integer 0' => [
-				'input' => 0,
-			],
-			'negative integer' => [
-				'input' => -123,
-			],
-			'positive integer' => [
-				'input' => 786687,
-			],
-			'float 0.0' => [
-				'input' => 0.0,
-			],
-			'negative float' => [
-				'input' => 5.600e-3,
-			],
-			'positive float' => [
-				'input' => 124.7,
-			],
-			'empty string' => [
-				'input' => '',
-			],
-			'numeric string' => [
-				'input' => '123',
-			],
-			'textual string' => [
-				'input' => 'foobar',
-			],
-			'textual string starting with numbers' => [
-				'input' => '123 My Street',
-			],
-			'empty array' => [
-				'input' => [],
-			],
-			'array with values, no keys' => [
-				'input' => [1, 2, 3],
-			],
-			'array with values, string keys' => [
-				'input' => ['a' => 1, 'b' => 2],
-			],
-			'plain object' => [
-				'input' => new stdClass(),
-			],
-			'Stringable object' => [
-				'input' => new StringableObject('value'),
-			],
-			'ArrayIterator object' => [
-				'input' => new ArrayIterator([1, 2, 3]),
-			],
-			'ArrayAccess object' => [
-				'input' => new ArrayAccessibleObject(),
-			],
-			'Iterator object, no array access' => [
-				'input' => new EmptyIterator(),
-			],
-			'resource (open file handle)' => [
-				'input' => self::$memory_handle_open,
-			],
-			'resource (closed file handle)' => [
-				'input' => self::$memory_handle_closed,
-			],
+			'null'                                 => [null],
+			'boolean false'                        => [false],
+			'boolean true'                         => [true],
+			'integer 0'                            => [0],
+			'negative integer'                     => [-123],
+			'positive integer'                     => [786687],
+			'float 0.0'                            => [0.0],
+			'negative float'                       => [5.600e-3],
+			'positive float'                       => [124.7],
+			'empty string'                         => [''],
+			'numeric string'                       => ['123'],
+			'textual string'                       => ['foobar'],
+			'textual string starting with numbers' => ['123 My Street'],
+			'empty array'                          => [[]],
+			'array with values, no keys'           => [[1, 2, 3]],
+			'array with values, string keys'       => [['a' => 1, 'b' => 2]],
+			'plain object'                         => [new stdClass()],
+			'Stringable object'                    => [new StringableObject('value')],
+			'ArrayIterator object'                 => [new ArrayIterator([1, 2, 3])],
+			'ArrayAccess object'                   => [new ArrayAccessibleObject()],
+			'Iterator object, no array access'     => [new EmptyIterator()],
+			'resource (open file handle)'          => [self::$memory_handle_open],
+			'resource (closed file handle)'        => [self::$memory_handle_closed],
 		];
 	}
 }
