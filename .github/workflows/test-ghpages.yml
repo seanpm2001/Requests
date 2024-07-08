@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           # Use the version as per https://pages.github.com/versions/.
-          ruby-version: 2.7.3
+          ruby-version: 2.7.4
           bundler-cache: true
 
       - name: Test building the GH Pages site
