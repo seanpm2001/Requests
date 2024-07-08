@@ -71,7 +71,7 @@ jobs:
         if: ${{ matrix.php == '8.4' }}
         uses: "ramsey/composer-install@v3"
         with:
-          composer-options: --ignore-platform-req=php
+          composer-options: "--ignore-platform-req=php+"
           custom-cache-suffix: $(date -u "+%Y-%m")
 
       - name: Setup problem matcher to provide annotations for PHPUnit
