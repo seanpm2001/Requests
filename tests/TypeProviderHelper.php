@@ -16,14 +16,14 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing null.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_NULL = ['null'];
 
 	/**
 	 * Keys of all type entries representing a boolean.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_BOOL = [
 		'boolean false',
@@ -33,7 +33,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing an integer.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_INT = [
 		'integer 0',
@@ -44,7 +44,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing a float.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_FLOAT = [
 		'float 0.0',
@@ -55,7 +55,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing an integer or float.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_INT_FLOAT = [
 		'integer 0',
@@ -69,7 +69,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing a string.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_STRING = [
 		'empty string',
@@ -81,7 +81,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries which are stringable.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_STRINGABLE = [
 		'empty string',
@@ -94,7 +94,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing an array.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_ARRAY = [
 		'empty array',
@@ -105,7 +105,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries which are iterable.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_ITERABLE = [
 		'empty array',
@@ -118,7 +118,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries which have array access.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_ARRAY_ACCESSIBLE = [
 		'empty array',
@@ -131,7 +131,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing an object.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_OBJECT = [
 		'plain object',
@@ -144,7 +144,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries representing a resource.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_RESOURCE = [
 		'resource (open file handle)',
@@ -154,7 +154,7 @@ final class TypeProviderHelper {
 	/**
 	 * Keys of all type entries which are considered empty.
 	 *
-	 * @var string[]
+	 * @var array<string>
 	 */
 	const GROUP_EMPTY = [
 		'null',
@@ -198,9 +198,9 @@ final class TypeProviderHelper {
 	 * Retrieve an array in data provider format with a selection of all typical PHP data types
 	 * *except* the named types specified in the $except parameter.
 	 *
-	 * @param string[] ...$except One or more arrays containing the names of the types to exclude.
-	 *                            Typically, one or more of the predefined "groups" (see the constants)
-	 *                            would be used here.
+	 * @param array<string> ...$except One or more arrays containing the names of the types to exclude.
+	 *                                 Typically, one or more of the predefined "groups" (see the constants)
+	 *                                 would be used here.
 	 *
 	 * @return array<string, array<mixed>>
 	 */
@@ -213,9 +213,9 @@ final class TypeProviderHelper {
 	/**
 	 * Retrieve an array in data provider format with a selection of typical PHP data types.
 	 *
-	 * @param string[] ...$selection One or more arrays containing the names of the types to include.
-	 *                               Typically, one or more of the predefined "groups" (see the constants)
-	 *                               would be used here.
+	 * @param array<string> ...$selection One or more arrays containing the names of the types to include.
+	 *                                    Typically, one or more of the predefined "groups" (see the constants)
+	 *                                    would be used here.
 	 *
 	 * @return array<string, array<mixed>>
 	 */

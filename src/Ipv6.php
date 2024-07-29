@@ -136,7 +136,7 @@ final class Ipv6 {
 	 *           0:0:0:0:0:FFFF:129.144.52.38
 	 *
 	 * @param string $ip An IPv6 address
-	 * @return string[] [0] contains the IPv6 represented part, and [1] the IPv4 represented part
+	 * @return array<string> [0] contains the IPv6 represented part, and [1] the IPv4 represented part
 	 */
 	private static function split_v6_v4($ip) {
 		if (strpos($ip, '.') !== false) {

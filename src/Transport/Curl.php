@@ -20,7 +20,7 @@ use WpOrg\Requests\Transport;
 use WpOrg\Requests\Utility\InputValidator;
 
 /**
- * cURL HTTP transport
+ * HTTP transport using libcurl.
  *
  * @package Requests\Transport
  */

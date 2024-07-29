@@ -76,9 +76,9 @@ class Basic implements Auth {
 	}
 
 	/**
-	 * Set cURL parameters before the data is sent
+	 * Set cURL parameters before the data is sent.
 	 *
-	 * @param resource|\CurlHandle $handle cURL handle
+	 * @param resource|\CurlHandle $handle The cURL handle.
 	 */
 	public function curl_before_send(&$handle) {
 		curl_setopt($handle, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
@@ -86,9 +86,9 @@ class Basic implements Auth {
 	}
 
 	/**
-	 * Add extra headers to the request before sending
+	 * Add extra headers to the request before sending.
 	 *
-	 * @param string $out HTTP header string
+	 * @param string $out HTTP header string.
 	 */
 	public function fsockopen_header(&$out) {
 		$out .= sprintf("Authorization: Basic %s\r\n", base64_encode($this->getAuthString()));

@@ -20,6 +20,15 @@ abstract class BaseTestCase extends TestCase {
 
 	protected $completed = [];
 
+	/**
+	 * Transport class to use for these tests.
+	 *
+	 * This property MUST be declared in the child class.
+	 *
+	 * @var string
+	 */
+	protected $transport;
+
 	public function set_up() {
 		// Intermediary variable $test_method. This can be simplified (removed) once the minimum supported PHP version is 7.0 or higher.
 		$test_method = [$this->transport, 'test'];
@@ -1198,7 +1207,7 @@ abstract class BaseTestCase extends TestCase {
 	/**
 	 * Get a Hooks instance that asserts correct enforcement for max_bytes.
 	 *
-	 * @return Hooks
+	 * @return \WpOrg\Requests\Hooks
 	 */
 	protected function getMaxBytesAssertionHooks() {
 		$hooks = new Hooks();

@@ -629,13 +629,13 @@ final class ParseTest extends TestCase {
 			$this->assertSame($expected['expired'], $cookie->is_expired(), 'Cookie expiration identification does not match expectation');
 		}
 
-		if (isset($expected_attributes) && !empty($expected_attributes)) {
+		if (is_array($expected_attributes) && !empty($expected_attributes)) {
 			foreach ($expected_attributes as $attr_key => $attr_val) {
 				$this->assertSame($attr_val, $cookie->attributes[$attr_key], "Attribute '$attr_key' should match supplied value");
 			}
 		}
 
-		if (isset($expected_flags) && !empty($expected_flags)) {
+		if (is_array($expected_flags) && !empty($expected_flags)) {
 			foreach ($expected_flags as $flag_key => $flag_val) {
 				$this->assertSame($flag_val, $cookie->flags[$flag_key], "Flag '$flag_key' should match supplied value");
 			}
