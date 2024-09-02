@@ -96,11 +96,11 @@ jobs:
 
       - name: Run the unit tests (PHPUnit < 10)
         if: ${{ ! startsWith( steps.phpunit_version.outputs.VERSION, '10.' ) }}
-        run: composer test
+        run: composer test -- --testdox --colors=always
 
       - name: Run the unit tests (PHPUnit 10+)
         if: ${{ startsWith( steps.phpunit_version.outputs.VERSION, '10.' ) }}
-        run: composer test10
+        run: composer test10 -- --testdox --colors=always
 
       - name: Stop proxy server
         continue-on-error: true
